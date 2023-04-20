@@ -1,0 +1,65 @@
+// Clearfix
+@mixin clearfix() {
+
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+//rwd
+// @media媒體查詢
+$desktop-media: 1280px;
+$desktop-media-less: 1279px;
+$pad-media: 768px;
+$pad-media-less: 767px;
+$phone-media: 480px;
+$phone-media-less: 479px;
+$mini-phone-media-less: 360px;
+
+//desktop ~up
+@mixin pc-width() {
+    @media all and (min-width: $desktop-media) {
+        @content;
+    }
+}
+
+//desktop ~
+@mixin pc-width-less() {
+    @media all and (max-width: $desktop-media-less) {
+        @content;
+    }
+}
+
+//pad ~ desktop
+@mixin pad-pc-width() {
+    @media all and (min-width: $pad-media) and (max-width: $desktop-media) {
+        @content;
+    }
+}
+
+// pad ~
+@mixin pad-width-less() {
+    @media all and (max-width: $pad-media-less) {
+        @content;
+    }
+}
+
+//phone ~
+@mixin phone-width-less() {
+    @media all and (max-width: $phone-media-less) {
+        @content;
+    }
+}
+
+//mini-phone ~
+@mixin mini-phone-width-less() {
+    @media all and (max-width: $mini-phone-media-less) {
+        @content;
+    }
+}
