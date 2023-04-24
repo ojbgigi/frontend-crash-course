@@ -161,3 +161,86 @@ a:hover {
   text-decoration: none;
   color: inherit;
 }
+
+.container {
+  width: 1248px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 3rem 0;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .logo {
+  width: 142px;
+  height: 39px;
+  top: 5px;
+  margin-right: 6rem;
+  text-indent: -9999px;
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+}
+.header .main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .main-nav li {
+  padding: 0 1.5rem;
+}
+.header .sub-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+}
+.header .sub-nav .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+}
+.header .sub-nav .control::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: #1E1E1E;
+}
+.header .sub-nav a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-indent: -9999px;
+}
+.header .sub-nav a.ic-cart {
+  background: url(../images/ic-cart.svg) no-repeat;
+  background-size: cover;
+}
+.header .sub-nav a.ic-user {
+  background: url(../images/ic-person.svg) no-repeat;
+  background-size: cover;
+}
+.header .sub-nav a.ic-filter {
+  background: url(../images/ic-filterRight.svg) no-repeat;
+  background-size: cover;
+}
