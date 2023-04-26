@@ -168,6 +168,24 @@ a:hover {
   font-size: 1.125rem;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-title h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2;
+}
+.section-title span {
+  color: rgba(30, 30, 30, 0.5);
+}
+
 .header {
   padding: 3rem 0;
   background: #ffffff;
@@ -266,7 +284,7 @@ a:hover {
 }
 .bn-box .num .num-item p {
   font-size: 2rem;
-  line-height: 3rem;
+  line-height: 3;
 }
 
 .search {
@@ -293,4 +311,78 @@ a:hover {
   text-indent: -9999px;
   border: none;
   outline: none;
+  cursor: pointer;
+}
+
+.selling {
+  margin-top: 97px;
+  margin-bottom: 113px;
+  flex-direction: row;
+}
+.selling .info {
+  width: 256px;
+}
+.selling .info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.selling .info p {
+  width: 196px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  color: rgba(30, 30, 30, 0.5);
+  line-height: 1.5;
+}
+.selling .info a {
+  width: 168px;
+  padding: 12px 14px 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #C1DCDC;
+  border-radius: 8px;
+}
+.selling .info a::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../images/ic-arrowRight.svg) center no-repeat;
+}
+.selling .pd-group {
+  display: flex;
+  gap: 48px;
+}
+.selling .pd-group li a {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.selling .pd-group li a span {
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding-bottom: 165px;
+}
+.about-content .about-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.about-content .about-item img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 24px;
+}
+.about-content .about-item p {
+  margin-top: 12px;
+  color: rgba(30, 30, 30, 0.5);
 }
