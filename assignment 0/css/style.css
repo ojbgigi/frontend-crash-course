@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap");
 html,
 body,
 div,
@@ -87,9 +87,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  font-family: "Noto Sans TC", "Apple LiGothic Medium", "Microsoft JhengHei", "LiHei Pro Medium", "STHeiti", "Microsoft YaHei", arial;
   vertical-align: baseline;
 }
 
@@ -142,13 +139,13 @@ html {
 
 body {
   height: 100%;
-  font-family: "Noto Sans TC", "Apple LiGothic Medium", "LiHei Pro Medium", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", arial;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
+  font-weight: 500;
 }
 
 * {
   position: relative;
-  -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   /* Firefox, other Gecko */
   box-sizing: border-box;
@@ -167,18 +164,16 @@ a:hover {
   margin: 0 auto;
 }
 
+.wrap {
+  font-size: 1.125rem;
+}
+
 .header {
   padding: 3rem 0;
   background: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .header .logo {
   width: 142px;
@@ -190,31 +185,25 @@ a:hover {
   background-size: contain;
 }
 .header .main-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex: 1;
+  align-items: center;
 }
 .header .main-nav li {
   padding: 0 1.5rem;
 }
+.header .main-nav li a {
+  color: rgba(30, 30, 30, 0.5);
+}
+.header .main-nav li a.active, .header .main-nav li a:hover {
+  color: rgb(30, 30, 30);
+}
 .header .sub-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 3rem;
 }
 .header .sub-nav .control {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 3rem;
 }
@@ -243,4 +232,65 @@ a:hover {
 .header .sub-nav a.ic-filter {
   background: url(../images/ic-filterRight.svg) no-repeat;
   background-size: cover;
+}
+
+.banner {
+  padding: 3rem;
+  height: 512px;
+  border-radius: 24px;
+  background: #C1DCDC url(../images/banner-img.png) right bottom no-repeat;
+}
+
+.bn-box {
+  width: 512px;
+}
+.bn-box h2 {
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.bn-box .num {
+  display: flex;
+  gap: 3rem;
+}
+.bn-box .num .num-item {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bn-box .num .num-item:first-child {
+  border-right: 1px solid rgb(30, 30, 30);
+  padding-right: 3rem;
+}
+.bn-box .num .num-item p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.search {
+  width: 449px;
+  height: 64px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  padding-right: 8px;
+}
+.search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.125rem;
+}
+.search button {
+  width: 48px;
+  height: 48px;
+  background: #C1DCDC url(../images/ic-search.svg) center no-repeat;
+  border-radius: 12px;
+  text-indent: -9999px;
+  border: none;
+  outline: none;
 }
