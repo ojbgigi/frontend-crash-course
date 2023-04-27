@@ -141,7 +141,6 @@ body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
 }
 
 * {
@@ -166,6 +165,7 @@ a:hover {
 
 .wrap {
   font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .section {
@@ -382,7 +382,64 @@ a:hover {
   height: 96px;
   margin-bottom: 24px;
 }
+.about-content .about-item h4 {
+  font-weight: 700;
+}
 .about-content .about-item p {
   margin-top: 12px;
   color: rgba(30, 30, 30, 0.5);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.full-bg {
+  margin-top: 48px;
+  background: #C1DCDC;
+  padding-bottom: 100px;
+}
+
+.categories-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -48px;
+}
+.categories-group li:nth-child(2) {
+  margin-top: 96px;
+}
+.categories-group li a {
+  text-align: center;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.describe {
+  width: 350px;
+  margin: 12px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.describe p {
+  color: rgba(30, 30, 30, 0.5);
+  text-align: center;
+  line-height: 1.5;
+}
+.describe a {
+  width: 150px;
+  padding: 12px 14px 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  color: rgb(30, 30, 30);
+}
+.describe a::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../images/ic-arrowRight.svg) center no-repeat;
 }

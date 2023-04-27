@@ -15,7 +15,6 @@ body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    font-weight: 500;
 }
 
 * {
@@ -41,6 +40,7 @@ a:hover {
 }
 .wrap {
     font-size: $font-base;
+    font-weight: 400;
 }
 
 //section
@@ -269,9 +269,65 @@ a:hover {
             height: 96px;
             margin-bottom: 24px;
         }
+        h4 {font-weight: 700;}
         p {
             margin-top: 12px; 
             color: $black-50;
+            text-align: center;
+            line-height: 1.5;
+        }
+    }
+}
+
+//categories-group
+.full-bg {
+    margin-top: 48px;
+    background: $primary;
+    padding-bottom: 100px;
+}
+.categories-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -48px;
+    li {
+        &:nth-child(2) {
+            margin-top: 96px;
+        }
+        a {
+            text-align: center;
+            font-weight: 700;
+            line-height: 2;
+        }
+    }
+}
+.describe {
+    width: 350px;
+    margin: 12px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    p {
+        color: $black-50;
+        text-align: center;
+        line-height: 1.5;
+    }
+    a {
+        width: 150px;
+        padding: 12px 14px 12px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: $white;
+        border-radius: 8px;
+        color: $black-100;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url(../images/ic-arrowRight.svg) center no-repeat;
         }
     }
 }
