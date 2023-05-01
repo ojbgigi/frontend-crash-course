@@ -239,6 +239,9 @@ a:hover {
   line-height: 24px;
   text-indent: -9999px;
 }
+.header .sub-nav a:hover {
+  opacity: 0.75;
+}
 .header .sub-nav a.ic-cart {
   background: url(../images/ic-cart.svg) no-repeat;
   background-size: cover;
@@ -313,6 +316,9 @@ a:hover {
   outline: none;
   cursor: pointer;
 }
+.search button:hover {
+  opacity: 0.9;
+}
 
 .selling {
   margin-top: 97px;
@@ -344,6 +350,9 @@ a:hover {
   background: #C1DCDC;
   border-radius: 8px;
 }
+.selling .info a:hover {
+  opacity: 0.9;
+}
 .selling .info a::after {
   content: "";
   display: inline-block;
@@ -359,6 +368,9 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.selling .pd-group li a:hover {
+  opacity: 0.9;
 }
 .selling .pd-group li a span {
   color: rgba(30, 30, 30, 0.5);
@@ -395,7 +407,6 @@ a:hover {
 .full-bg {
   margin-top: 48px;
   background: #C1DCDC;
-  padding-bottom: 100px;
 }
 
 .categories-group {
@@ -411,10 +422,14 @@ a:hover {
   font-weight: 700;
   line-height: 2;
 }
+.categories-group li a:hover {
+  opacity: 0.9;
+}
 
 .describe {
   width: 350px;
   margin: 12px auto;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -442,6 +457,10 @@ a:hover {
   width: 24px;
   height: 24px;
   background: url(../images/ic-arrowRight.svg) center no-repeat;
+}
+.describe a:hover {
+  color: rgba(30, 30, 30, 0.75);
+  opacity: 0.95;
 }
 
 .customers-head {
@@ -506,4 +525,78 @@ a:hover {
 .customers-group .card .detail .name span {
   color: rgba(30, 30, 30, 0.5);
   font-size: 0.75rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 0;
+}
+.footer .social {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.footer .social .logo {
+  width: 107px;
+  height: 29px;
+  margin-bottom: 24px;
+  text-indent: -9999px;
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+}
+.footer .social p {
+  margin-bottom: 24px;
+  color: rgba(30, 30, 30, 0.5);
+  line-height: 1.5;
+}
+.footer .social .social-btn {
+  display: flex;
+  gap: 24px;
+}
+.footer .social .social-btn a {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  border: 1px solid rgba(30, 30, 30, 0.5);
+  line-height: 48px;
+  text-indent: -9999px;
+}
+.footer .social .social-btn a:hover {
+  opacity: 0.75;
+}
+.footer .social .social-btn a.ic-facebook {
+  background: url(../images/ic-facebook.svg) center no-repeat;
+}
+.footer .social .social-btn a.ic-instagram {
+  background: url(../images/ic-instagram.svg) center no-repeat;
+}
+.footer .social .social-btn a.ic-twitter {
+  background: url(../images/ic-twitter.svg) center no-repeat;
+}
+.footer .sitmap {
+  display: flex;
+  gap: 48px;
+}
+.footer .sitmap .group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footer .sitmap .group h6 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.footer .sitmap .group a {
+  color: rgba(30, 30, 30, 0.5);
+}
+.footer .sitmap .group a:hover {
+  color: rgba(30, 30, 30, 0.75);
+}
+
+.copyright {
+  margin-top: 50px;
+  padding-bottom: 48px;
+  color: rgba(30, 30, 30, 0.5);
 }
