@@ -84,7 +84,7 @@ if (start < number && number < end) {
 
 // 2-6
 let year = 2023;
-if ((year % 4 == 0) || (year % 400 == 0)) {
+if ((year % 4 == 0) || (year % 400 == 0) || (yaer % 100 == 1)) {
     console.log("是閏年");
 } else {
     console.log("不是閏年");
