@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input-value">
+    <button onclick="displayValue()">add color</button>
+    <p>新增的顏色如下：</p>
+    <ul class="color-list"></ul>
+    <script>
+        const displayValue = () => {
+            let input = document.getElementById("input-value");
+            let inputValue = input.value;
+            let liParent = document.querySelector(".color-list");
+            let liTag = document.createElement("li");
+            let liText = document.createTextNode(inputValue);
+            liTag.appendChild(liText);
+            liParent.appendChild(liTag)
+            // Clear the input value
+            input.value = "";
+        }
+    </script>
+</body>
+
+</html>
