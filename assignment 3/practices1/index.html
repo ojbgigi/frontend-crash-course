@@ -152,13 +152,11 @@
                     <h4>Todo App</h4>
                     <div class="todo-control">
                         <input class="todo-input" type="text" placeholder="Add your new todo">
-                        <button class="btn"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
+                        <button class="btn" onclick="addTodo()"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></button>
                     </div>
                     <ul class="todo-list">
-                        <li>Test123</li>
-                        <li>Test123</li>
                     </ul>
-                    <p class="todo-tip">You have X pending tasks</p>
+                    <p class="todo-tip">You have <span class="todo-num">0</span> pending tasks</p>
                 </div>
             </div>
         </div>
@@ -180,6 +178,19 @@
     const resetNum=()=>{
         let target=document.querySelector(".counter-number");
        target.textContent=0;
+    }
+    const addTodo=()=>{
+        let target=document.querySelector(".todo-input");
+        let targetText=target.value;
+        let goal=document.querySelector(".todo-list");
+        let item=document.createElement("li");
+        item.textContent=targetText;
+        goal.appendChild(item);
+        target.value="";
+        let num=document.querySelector(".todo-num");
+        let numText=num.textContent;
+        numText=Number(numText)+1;
+        num.textContent=numText;
     }
    </script>
 </body>
