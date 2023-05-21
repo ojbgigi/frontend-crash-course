@@ -5,9 +5,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment3-practices2</title>
+    <style>
+        html{height: 100%;}
+        body{
+            margin: 0;
+            height: 100%;
+        }
+        .wrap{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+        }
+        .content{
+            display: flex;
+            gap: 16px;
+            flex: 1;
+        }
+        @media (max-width: 480px){
+            .content{
+                flex-direction: column;
+            }
+        }
+        .box{
+            flex: 1;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        .btn{
+            padding: 8px 16px;
+            border: 0;
+            background: #4887de;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn:hover{background: #5e98e7;}
+        .activity-zone{
+            background: #ddd;
+            padding: 0 16px;
+            border-radius: 8px;
+            line-height: 2;
+        }
+        .input{
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .result{
+            margin-top: 16px;
+        }
+    </style>
 </head>
 <body>
-    <p>Assignment3-practices2</p>
-    <a href="../../index.html">Back</a>
+    <div class="wrap">
+        <div class="head">
+            <h3>Assignment3-practices2</h3>
+            <a href="../../index.html">Back</a>
+        </div>
+        <div class="content">
+            <div class="box">
+                <button class="btn" onclick="Activity()">Show</button>
+                <p class="activity-empty">請按下Show按鈕，將會顯示隨機活動如下：</ㄣ>
+                <div class="activity-zone">
+                </div>
+            </div>
+            <div class="box">
+                <input type="text" class="input" placeholder="enter name">
+                <button class="btn" onclick="Predict()">enter</button>
+                <div class="result">預測<span class="name"></span>的年齡為<span class="age"></span></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const Activity=()=>{
+            const url="https://www.boredapi.com/api/activity";
+            fetch(url)
+            .then(response=>response.json())
+            .then(date=>{
+                let text=date.activity;
+                let target=document.querySelector(".activity-zone");
+                target.textContent=text;
+            })
+        }
+        const Predict=()=>{
+            let input=document.querySelector(".input");
+            let name=input.value;
+            let displayName=document.querySelector(".name");
+            displayName.textContent=name;
+            const url="https://api.agify.io/?name="+name;
+            fetch(url)
+            .then(response=>response.json())
+            .then(date=>{
+                let age=date.age;
+                let displayAge=document.querySelector(".age");
+                displayAge.textContent=age;
+            })
+            
+        }
+    </script>
 </body>
 </html>
