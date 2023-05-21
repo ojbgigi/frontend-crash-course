@@ -140,11 +140,11 @@
                 <div class="counter-wrap">
                     <h4>Counter App</h4>
                     <div class="counter-body">
-                        <button class="btn add">+</button>
+                        <button class="btn" onclick="addNum()">+</button>
                         <div class="counter-number">0</div>
-                        <button class="btn sub">-</button>
+                        <button class="btn" onclick="subNum()">-</button>
                     </div>
-                    <button class="btn reset">Reset</button>
+                    <button class="btn reset" onclick="resetNum()">Reset</button>
                 </div>
             </div>
             <div class="row todo">
@@ -164,7 +164,23 @@
         </div>
     </div>
    <script>
-
+    //counter app
+    const addNum=()=>{
+       let target=document.querySelector(".counter-number");
+       let targetNum=target.textContent;
+       targetNum=Number(targetNum)+1;
+       target.textContent=targetNum;
+    }
+    const subNum=()=>{
+        let target=document.querySelector(".counter-number");
+       let targetNum=target.textContent;
+       targetNum=Number(targetNum)-1;
+       target.textContent=targetNum;
+    }
+    const resetNum=()=>{
+        let target=document.querySelector(".counter-number");
+       target.textContent=0;
+    }
    </script>
 </body>
 </html>
