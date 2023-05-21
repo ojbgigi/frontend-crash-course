@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise- show a random dog</title>
+</head>
+<body>
+    <ul>
+        <li>Create a block to show a random dog image</li>
+        <li>Create a button show a random dog image when user click</li>
+    </ul>
+    <button onclick="randomImage()">Random image</button>
+    <div style="margin-top: 24px;">
+        <img id="dog">
+    </div>
+    <script>
+        const randomImage=()=>{
+            const url="https://dog.ceo/api/breeds/image/random";
+            fetch(url)
+            .then(response=>response.json())
+            .then(data=>{
+                const imgSrc=data.message;
+                const img=document.getElementById("dog");
+                img.src=imgSrc;
+            })
+        }
+    </script>
+</body>
+</html>
