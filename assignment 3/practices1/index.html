@@ -163,34 +163,35 @@
     </div>
    <script>
     //counter app
+    let counter=0;
+    let target=document.querySelector(".counter-number");
     const addNum=()=>{
-       let target=document.querySelector(".counter-number");
-       let targetNum=target.textContent;
-       targetNum=Number(targetNum)+1;
-       target.textContent=targetNum;
+       counter++;
+       target.textContent=counter;
     }
     const subNum=()=>{
-        let target=document.querySelector(".counter-number");
-       let targetNum=target.textContent;
-       targetNum=Number(targetNum)-1;
-       target.textContent=targetNum;
+        counter--;
+       target.textContent=counter;
     }
     const resetNum=()=>{
-        let target=document.querySelector(".counter-number");
-       target.textContent=0;
+        counter=0;
+       target.textContent=counter;
     }
+    let todo=[];
+    let input=document.querySelector(".todo-input");
+    let num=document.querySelector(".todo-num");
     const addTodo=()=>{
-        let target=document.querySelector(".todo-input");
-        let targetText=target.value;
+        let inputText=input.value;
+        todo.push(inputText);
+        input.value="";
         let goal=document.querySelector(".todo-list");
-        let item=document.createElement("li");
-        item.textContent=targetText;
-        goal.appendChild(item);
-        target.value="";
-        let num=document.querySelector(".todo-num");
-        let numText=num.textContent;
-        numText=Number(numText)+1;
-        num.textContent=numText;
+        goal.innerHTML="";
+        for(let i=0;i<todo.length;i++){
+            let item=document.createElement("li");
+            item.textContent=todo[i];
+            goal.appendChild(item);
+        }
+        num.textContent=todo.length;
     }
    </script>
 </body>
