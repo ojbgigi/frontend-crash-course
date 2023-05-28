@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment4 - Practices</title>
+</head>
+<body>
+    <script>
+        //practices 1 - 顯示一個訊息：使用 Promise，在延遲 1 秒後，在控制台打印出 "Hello, world!"。
+        const promise1=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const data="Hello,world!";
+                resolve(data);
+            },1000)
+        })
+        promise1.then((data)=>{
+            console.log("practices1 print message:",data);
+        })
+
+        //practices 2 - 延遲執行：使用 async/await，創建一個函數，該函數將延遲 3 秒後返回一個 Promise。然後使用 await 來等待 Promise 完成，並在控制台打印出 "Delay complete!"。
+        const main=async()=>{
+            const promise2=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    const data="Delay complete!";
+                    resolve(data);
+                },1000)
+            })
+            promise2.then((data)=>{
+                console.log("practices2 print message:",data);
+            })
+            await promise2;
+        }
+        main();
+
+        //practices 3 - 處理錯誤：創建一個 Promise，該 Promise resolve 或 reject。使用 async/await 在控制台打印出相應的訊息，如果 Promise 成功，則打印出 "Promise resolved!"，如果 Promise 失敗，則打印出 "Promise rejected!"。
+        const main2=async(status)=>{
+            const promise3=new Promise((resolve,reject)=>{
+                
+                setTimeout(()=>{
+                    if(status){
+                    // 成功時
+                    resolve("Promise resolved!");
+                    }else{
+                    // 失敗時
+                    reject("Promise rejected!")
+                    }
+                },1000)         
+            });
+            promise3
+            .then(res=>{
+                console.log("practices3 print message",res);
+            })
+            .catch(err=>{
+                console.log("practices3 print message",err);
+            })
+            await promise3;
+        }
+        main2(true);
+        
+        
+        //practices 4 - 順序執行多個 Promise：創建三個 Promise：Promise A 在 2 秒後 resolve，Promise B 在 1 秒後resolve，Promise C 在 3 秒後resolve。使用 Promise 和 async/await，在它們依次解析完成後，在控制台打印出 "All promises resolved!"
+        const main3=async(status)=>{
+            const promiseA=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(console.log("A"))
+                },2000)
+            });
+            await promiseA;
+            const promiseB=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(console.log("B"))
+                },1000)
+            });
+            await promiseB;
+            const promiseC=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(console.log("C"))
+                },3000)
+            });
+            await promiseC; 
+            if(status){
+                console.log("practices4 print message","All promises resolved!");
+            }
+        }
+        main3(true);
+    </script>
+</body>
+</html>
