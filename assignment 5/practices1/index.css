@@ -17,9 +17,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}
 .block {
     display: flex;
     flex-direction: column;

@@ -19,7 +19,13 @@ body {
     align-items: center;
     gap: 16px;
 }
-
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}
 .input-box {
     background: #fff;
     border: 1px solid #ccc;
