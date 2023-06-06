@@ -4,7 +4,7 @@ import { plus, minus, multiply, divide } from "./operation.js";
 const { num1, num2, equals, operationBtn } = getNodes();
 
 operationBtn.addEventListener("click", (e) => {
-    console.log(e);
+    console.log(e.target.className);
 })
 
 
