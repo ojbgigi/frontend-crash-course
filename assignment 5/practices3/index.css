@@ -1,52 +1,67 @@
-*{
+* {
     box-sizing: border-box;
 }
-html{
+
+html {
     height: 100%;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background: #f5f5f5;
 }
-.wrap{
+
+.wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
 }
-.input-box{
+
+.input-box {
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding-right: 16px;
 }
-.input-box input{
+
+.input-box input {
     border: 0;
     padding: 16px;
     border-radius: 8px;
     font-size: 16px;
 }
-.input-box input:focus{
+
+.input-box input:focus {
     outline: none;
 }
-.counter-box{
+
+.counter-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
-.num-display .counter-num{
+
+.num-display .counter-num {
     font-size: 3rem;
     font-weight: bold;
 }
-.num-display span{
+
+.num-display span {
     font-size: 1.5rem;
     font-weight: bold;
 }
-.control-btn button{
+
+.control-btn {
+    display: flex;
+    gap: 16px;
+}
+
+.control-btn button {
     color: #fff;
     background: #307fd9;
     border: 0;
