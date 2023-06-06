@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+
+.number-box{
+    font-size: 3rem;
+}
+
+.random-btn,.answer-btn{
+    color: #fff;
+    background: #307fd9;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+.input-num{
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+.tip {
+    padding: 8px;
+    color: #333;
+}
