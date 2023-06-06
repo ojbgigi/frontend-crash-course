@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.block input {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.operation {
+    display: flex;
+    gap: 12px;
+}
+
+.operation button,
+.equals-btn {
+    color: #fff;
+    background: #307fd9;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.result {
+    font-size: 3rem;
+    font-weight: bold;
+}
