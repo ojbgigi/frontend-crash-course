@@ -49,7 +49,9 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
-
+.operation button.focus{
+    background: #0b5cb8;
+}
 .result {
     font-size: 3rem;
     font-weight: bold;
