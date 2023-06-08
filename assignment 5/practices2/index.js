@@ -1,47 +1,46 @@
-const todo = [];
 import { getNodes } from "./domHandler.js";
+
+import { updateList, findFinish } from "./todoData.js";
+
+const todo = [];
 
 const { input, num, addBtn, goal } = getNodes();
 
-//新增項目
-addBtn.addEventListener("click", () => {
-  todo.push(input.value);
-  goal.innerHTML = "";
-  let itemID = 0;
-  for (let i = 0; i < todo.length; i++) {
-    let item = document.createElement("li");
-    item.setAttribute("id", itemID);
-    itemID = itemID + 1;
-    let checkbox = document.createElement("input");
-    checkbox.setAttribute("type", "checkbox");
-    let itemText = document.createElement("span");
-    itemText.textContent = todo[i];
-    let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "✕";
-    goal.appendChild(item);
-    item.appendChild(checkbox);
-    item.appendChild(itemText);
-    item.appendChild(deleteBtn);
-  }
-  console.log("新增時", todo);
+const addTodo = () => {
+  // goal.innerHTML = "";
+  let inputText = input.value;
+  let itemContent = { content: inputText, check: "" };
+  itemContent.content = inputText;
+  todo.push(itemContent);
+  updateList(todo);
   input.value = "";
   num.textContent = todo.length;
-});
+};
 
-//標記完成
+//新增項目
+addBtn.addEventListener("click", addTodo);
+
 goal.addEventListener("click", (e) => {
+  //標記完成
   if (e.target.nodeName === "INPUT" && e.target.checked == true) {
-    num.textContent = Number(num.textContent) - 1;
+    const parent = e.target.parentElement;
+    const targetIndex = Number(parent.id);
+    todo[targetIndex].check = "checked";
+    findFinish(todo);
   }
   if (e.target.nodeName === "INPUT" && e.target.checked == false) {
-    num.textContent = Number(num.textContent) + 1;
+    const parent = e.target.parentElement;
+    const targetIndex = Number(parent.id);
+    todo[targetIndex].check = "";
+    findFinish(todo);
   }
+
+  //刪除項目
   if (e.target.nodeName === "BUTTON") {
     const parent = e.target.parentElement;
-    const targetText = parent.childNodes[1].textContent;
     const targetIndex = Number(parent.id);
     todo.splice(targetIndex, 1);
-    goal.removeChild(parent);
-    num.textContent = todo.length;
+    updateList(todo);
+    findFinish(todo);
   }
 });
